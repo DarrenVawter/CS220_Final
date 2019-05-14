@@ -6,10 +6,14 @@ class Main{
         var Double PI;
         var Double hD;
         var Double index;
-        var int intIndex;
+        var Array sinVals;
+        var int uIndex;
+        var int lIndex;
         var int i;
         var int x;
-        var Array sinVals;
+        var int freq;
+        var int density;
+        var boolean keyWaiting;
 
         //init other classes
         do Double.init();
@@ -23,39 +27,77 @@ class Main{
 
         let index = Double.new();
 
-        let sinVals = Array.new(24);
+        let sinVals = Array.new(64);
         let sinVals[0]  = 0;
-        let sinVals[1]  = 1951;
-        let sinVals[2]  = 3827;
-        let sinVals[3]  = 5556;
-        let sinVals[4]  = 7071;
-        let sinVals[5]  = 8315;
-        let sinVals[6]  = 9239;
-        let sinVals[7]  = 9808;
-        let sinVals[8]  = 10000;
-        let sinVals[9]  = 9808;
-        let sinVals[10] = 9239;
-        let sinVals[11] = 8315;
-        let sinVals[12] = 7071;
-        let sinVals[13] = 5556;
-        let sinVals[14] = 3827;
-        let sinVals[15] = 1951;
-        let sinVals[16] = 0;
-        let sinVals[17] = -1951;
-        let sinVals[18] = -3827;
-        let sinVals[19] = -5556;
-        let sinVals[20] = -7071;
-        let sinVals[21] = -8315;
-        let sinVals[22] = -9239;
-        let sinVals[23] = -9808;
-        let sinVals[24] = -10000;
-        let sinVals[25] = -9808;
-        let sinVals[26] = -9239;
-        let sinVals[27] = -8315;
-        let sinVals[28] = -7071;
-        let sinVals[29] = -5556;
-        let sinVals[30] = -3827;
-        let sinVals[31] = -1951;
+        let sinVals[2]  = 1951;
+        let sinVals[4]  = 3827;
+        let sinVals[6]  = 5556;
+        let sinVals[8]  = 7071;
+        let sinVals[10]  = 8315;
+        let sinVals[12]  = 9239;
+        let sinVals[14]  = 9808;
+        let sinVals[16]  = 10000;
+        let sinVals[18]  = 9808;
+        let sinVals[20] = 9239;
+        let sinVals[22] = 8315;
+        let sinVals[24] = 7071;
+        let sinVals[26] = 5556;
+        let sinVals[28] = 3827;
+        let sinVals[30] = 1951;
+        let sinVals[32] = 0;
+        let sinVals[34] = -1951;
+        let sinVals[36] = -3827;
+        let sinVals[38] = -5556;
+        let sinVals[40] = -7071;
+        let sinVals[42] = -8315;
+        let sinVals[44] = -9239;
+        let sinVals[46] = -9808;
+        let sinVals[48] = -10000;
+        let sinVals[50] = -9808;
+        let sinVals[52] = -9239;
+        let sinVals[54] = -8315;
+        let sinVals[56] = -7071;
+        let sinVals[58] = -5556;
+        let sinVals[60] = -3827;
+        let sinVals[62] = -1951;
+
+        let sinVals[1]  = 980;
+        let sinVals[3]  = 2903;
+        let sinVals[5]  = 4714;
+        let sinVals[7]  = 6344;
+        let sinVals[9]  = 7730;
+        let sinVals[11]  = 8819;
+        let sinVals[13]  = 9569;
+        let sinVals[15]  = 9952;
+        let sinVals[17]  = 9952;
+        let sinVals[19]  = 9569;
+        let sinVals[21] = 8819;
+        let sinVals[23] = 7730;
+        let sinVals[25] = 6344;
+        let sinVals[27] = 4714;
+        let sinVals[29] = 2903;
+        let sinVals[31] = 980;
+        let sinVals[33] = -980;
+        let sinVals[35] = -2903;
+        let sinVals[37] = -4714;
+        let sinVals[39] = -6344;
+        let sinVals[41] = -7730;
+        let sinVals[43] = - 8819;
+        let sinVals[45] = - 9569;
+        let sinVals[47] = - 9952;
+        let sinVals[49] = - 9952;
+        let sinVals[51] = - 9569;
+        let sinVals[53] = -8819;
+        let sinVals[55] = -7730;
+        let sinVals[57] = -6344;
+        let sinVals[59] = -4714;
+        let sinVals[61] = -2903;
+        let sinVals[63] = -980;
+
+        //init vars
+        let freq = 5;
+        let density = 1;
+        let keyWaiting = true;
 
         //begin processing
         while(true){
@@ -63,20 +105,75 @@ class Main{
             let i = 0;
             while(i<512){
 
+                //only allow presses of up or down arrows, not holding
+                if( keyWaiting ){
+                    if(Keyboard.keyPressed()=131){
+                        let keyWaiting = false;
+                        let freq = freq - 1;
+                        if(freq < 0){
+                            let freq = 0;
+                        }
+                    }else{if(Keyboard.keyPressed()=133){
+                        let keyWaiting = false;
+                        let freq = freq + 1;
+                        if(freq > 16){
+                            let freq = 16;
+                        }
+                    }}
+
+                }else{
+
+                    if(Keyboard.keyPressed()=0){
+                        let keyWaiting = true;
+                    }
+
+                }
+
+                //only allow presses of left or right arrows, not holding
+                if( keyWaiting ){
+                    if(Keyboard.keyPressed()=130){
+                        let keyWaiting = false;
+                        let density = density - 1;
+                        if(density < 1){
+                            let density = 1;
+                        }
+                    }else{if(Keyboard.keyPressed()=132){
+                        let keyWaiting = false;
+                        let density = density + 1;
+                        if(density > 10){
+                            let density = 10;
+                        }
+                    }}
+
+                }else{
+
+                    if(Keyboard.keyPressed()=0){
+                        let keyWaiting = true;
+                    }
+
+                }
+
                 //calc sinVal index
                 do index.zero();
                 do index.addInt(x);
-                do index.divideInt(5);//freq mod
+                do index.divideInt(freq);//freq modulation
+
+                //get sin value indices
+                let lIndex = (index.whole() & 63);
+                let uIndex = (index.whole()+1 & 63);
+
+                //interpolate between indices
+                do index.subtractInt(index.whole());
+                do index.multInt(sinVals[uIndex]-sinVals[lIndex]);
+                do index.addInt(sinVals[lIndex]);
                 if( ~( (index.decimal()&1) = 0 ) ){
                     do index.addInt(1);
                 }
-                let intIndex = (index.whole() & 31);
-
                 // hD=0;
                 do hD.zero();
 
                 // hD+=sinVal[index]
-                do hD.addInt(sinVals[intIndex]);
+                do hD.addInt(index.whole());
 
                 // hD/=80
                 do hD.divideInt(80);
@@ -98,14 +195,14 @@ class Main{
                 do Screen.drawLine(i,0,i,hD.whole());
 
                 //cap x
-                if(x = 31415){
+                if(x > 31414){
                     let x = -31416;
                 }
                 //x++
-                let x = x + 1;
+                let x = x + density;
 
                 //i++
-                let i = i + 1;
+                let i = i + density;
             }
 
         }

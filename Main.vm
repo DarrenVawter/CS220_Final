@@ -1,4 +1,4 @@
-function Main.main 7
+function Main.main 11
 call Double.init 0
 pop temp 0
 call Double.new 0
@@ -15,99 +15,51 @@ call Double.new 0
 pop local 1
 call Double.new 0
 pop local 2
-push constant 24
+push constant 64
 call Array.new 1
-pop local 6
+pop local 3
 push constant 0
-push local 6
+push local 3
 add
 push constant 0
 pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push constant 1
-push local 6
+push constant 2
+push local 3
 add
 push constant 1951
 pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push constant 2
-push local 6
+push constant 4
+push local 3
 add
 push constant 3827
 pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push constant 3
-push local 6
+push constant 6
+push local 3
 add
 push constant 5556
 pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push constant 4
-push local 6
+push constant 8
+push local 3
 add
 push constant 7071
 pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push constant 5
-push local 6
-add
-push constant 8315
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
-push constant 6
-push local 6
-add
-push constant 9239
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
-push constant 7
-push local 6
-add
-push constant 9808
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
-push constant 8
-push local 6
-add
-push constant 10000
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
-push constant 9
-push local 6
-add
-push constant 9808
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
 push constant 10
-push local 6
-add
-push constant 9239
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
-push constant 11
-push local 6
+push local 3
 add
 push constant 8315
 pop temp 0
@@ -115,47 +67,95 @@ pop pointer 1
 push temp 0
 pop that 0
 push constant 12
-push local 6
+push local 3
+add
+push constant 9239
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 14
+push local 3
+add
+push constant 9808
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 16
+push local 3
+add
+push constant 10000
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 18
+push local 3
+add
+push constant 9808
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 20
+push local 3
+add
+push constant 9239
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 22
+push local 3
+add
+push constant 8315
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 24
+push local 3
 add
 push constant 7071
 pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push constant 13
-push local 6
+push constant 26
+push local 3
 add
 push constant 5556
 pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push constant 14
-push local 6
+push constant 28
+push local 3
 add
 push constant 3827
 pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push constant 15
-push local 6
+push constant 30
+push local 3
 add
 push constant 1951
 pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push constant 16
-push local 6
+push constant 32
+push local 3
 add
 push constant 0
 pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push constant 17
-push local 6
+push constant 34
+push local 3
 add
 push constant 1951
 neg
@@ -163,8 +163,8 @@ pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push constant 18
-push local 6
+push constant 36
+push local 3
 add
 push constant 3827
 neg
@@ -172,8 +172,8 @@ pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push constant 19
-push local 6
+push constant 38
+push local 3
 add
 push constant 5556
 neg
@@ -181,8 +181,8 @@ pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push constant 20
-push local 6
+push constant 40
+push local 3
 add
 push constant 7071
 neg
@@ -190,8 +190,8 @@ pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push constant 21
-push local 6
+push constant 42
+push local 3
 add
 push constant 8315
 neg
@@ -199,8 +199,8 @@ pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push constant 22
-push local 6
+push constant 44
+push local 3
 add
 push constant 9239
 neg
@@ -208,8 +208,8 @@ pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push constant 23
-push local 6
+push constant 46
+push local 3
 add
 push constant 9808
 neg
@@ -217,8 +217,8 @@ pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push constant 24
-push local 6
+push constant 48
+push local 3
 add
 push constant 10000
 neg
@@ -226,8 +226,8 @@ pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push constant 25
-push local 6
+push constant 50
+push local 3
 add
 push constant 9808
 neg
@@ -235,8 +235,8 @@ pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push constant 26
-push local 6
+push constant 52
+push local 3
 add
 push constant 9239
 neg
@@ -244,8 +244,8 @@ pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push constant 27
-push local 6
+push constant 54
+push local 3
 add
 push constant 8315
 neg
@@ -253,8 +253,8 @@ pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push constant 28
-push local 6
+push constant 56
+push local 3
 add
 push constant 7071
 neg
@@ -262,8 +262,8 @@ pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push constant 29
-push local 6
+push constant 58
+push local 3
 add
 push constant 5556
 neg
@@ -271,8 +271,8 @@ pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push constant 30
-push local 6
+push constant 60
+push local 3
 add
 push constant 3827
 neg
@@ -280,8 +280,8 @@ pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push constant 31
-push local 6
+push constant 62
+push local 3
 add
 push constant 1951
 neg
@@ -289,29 +289,473 @@ pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
+push constant 1
+push local 3
+add
+push constant 980
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push local 3
+add
+push constant 2903
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 5
+push local 3
+add
+push constant 4714
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 7
+push local 3
+add
+push constant 6344
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 9
+push local 3
+add
+push constant 7730
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 11
+push local 3
+add
+push constant 8819
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 13
+push local 3
+add
+push constant 9569
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 15
+push local 3
+add
+push constant 9952
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 17
+push local 3
+add
+push constant 9952
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 19
+push local 3
+add
+push constant 9569
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 21
+push local 3
+add
+push constant 8819
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 23
+push local 3
+add
+push constant 7730
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 25
+push local 3
+add
+push constant 6344
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 27
+push local 3
+add
+push constant 4714
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 29
+push local 3
+add
+push constant 2903
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 31
+push local 3
+add
+push constant 980
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 33
+push local 3
+add
+push constant 980
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 35
+push local 3
+add
+push constant 2903
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 37
+push local 3
+add
+push constant 4714
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 39
+push local 3
+add
+push constant 6344
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 41
+push local 3
+add
+push constant 7730
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 43
+push local 3
+add
+push constant 8819
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 45
+push local 3
+add
+push constant 9569
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 47
+push local 3
+add
+push constant 9952
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 49
+push local 3
+add
+push constant 9952
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 51
+push local 3
+add
+push constant 9569
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 53
+push local 3
+add
+push constant 8819
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 55
+push local 3
+add
+push constant 7730
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 57
+push local 3
+add
+push constant 6344
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 59
+push local 3
+add
+push constant 4714
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 61
+push local 3
+add
+push constant 2903
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 63
+push local 3
+add
+push constant 980
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 5
+pop local 8
+push constant 1
+pop local 9
+push constant 0
+not
+pop local 10
 label WHILE_EXP0
 push constant 0
 not
 not
 if-goto WHILE_END0
 push constant 0
-pop local 4
+pop local 6
 label WHILE_EXP1
-push local 4
+push local 6
 push constant 512
 lt
 not
 if-goto WHILE_END1
+push local 10
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+call Keyboard.keyPressed 0
+push constant 131
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 0
+pop local 10
+push local 8
+push constant 1
+sub
+pop local 8
+push local 8
+push constant 0
+lt
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push constant 0
+pop local 8
+label IF_FALSE2
+goto IF_END1
+label IF_FALSE1
+call Keyboard.keyPressed 0
+push constant 133
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push constant 0
+pop local 10
+push local 8
+push constant 1
+add
+pop local 8
+push local 8
+push constant 16
+gt
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push constant 16
+pop local 8
+label IF_FALSE4
+label IF_FALSE3
+label IF_END1
+goto IF_END0
+label IF_FALSE0
+call Keyboard.keyPressed 0
+push constant 0
+eq
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push constant 0
+not
+pop local 10
+label IF_FALSE5
+label IF_END0
+push local 10
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+call Keyboard.keyPressed 0
+push constant 130
+eq
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push constant 0
+pop local 10
+push local 9
+push constant 1
+sub
+pop local 9
+push local 9
+push constant 1
+lt
+if-goto IF_TRUE8
+goto IF_FALSE8
+label IF_TRUE8
+push constant 1
+pop local 9
+label IF_FALSE8
+goto IF_END7
+label IF_FALSE7
+call Keyboard.keyPressed 0
+push constant 132
+eq
+if-goto IF_TRUE9
+goto IF_FALSE9
+label IF_TRUE9
+push constant 0
+pop local 10
+push local 9
+push constant 1
+add
+pop local 9
+push local 9
+push constant 10
+gt
+if-goto IF_TRUE10
+goto IF_FALSE10
+label IF_TRUE10
+push constant 10
+pop local 9
+label IF_FALSE10
+label IF_FALSE9
+label IF_END7
+goto IF_END6
+label IF_FALSE6
+call Keyboard.keyPressed 0
+push constant 0
+eq
+if-goto IF_TRUE11
+goto IF_FALSE11
+label IF_TRUE11
+push constant 0
+not
+pop local 10
+label IF_FALSE11
+label IF_END6
 push local 2
 call Double.zero 1
 pop temp 0
 push local 2
-push local 5
+push local 7
 call Double.addInt 2
 pop temp 0
 push local 2
-push constant 5
+push local 8
 call Double.divideInt 2
+pop temp 0
+push local 2
+call Double.whole 1
+push constant 63
+and
+pop local 5
+push local 2
+call Double.whole 1
+push constant 1
+add
+push constant 63
+and
+pop local 4
+push local 2
+push local 2
+call Double.whole 1
+call Double.subtractInt 2
+pop temp 0
+push local 2
+push local 4
+push local 3
+add
+pop pointer 1
+push that 0
+push local 5
+push local 3
+add
+pop pointer 1
+push that 0
+sub
+call Double.multInt 2
+pop temp 0
+push local 2
+push local 5
+push local 3
+add
+pop pointer 1
+push that 0
+call Double.addInt 2
 pop temp 0
 push local 2
 call Double.decimal 1
@@ -320,28 +764,20 @@ and
 push constant 0
 eq
 not
-if-goto IF_TRUE0
-goto IF_FALSE0
-label IF_TRUE0
+if-goto IF_TRUE12
+goto IF_FALSE12
+label IF_TRUE12
 push local 2
 push constant 1
 call Double.addInt 2
 pop temp 0
-label IF_FALSE0
-push local 2
-call Double.whole 1
-push constant 31
-and
-pop local 3
+label IF_FALSE12
 push local 1
 call Double.zero 1
 pop temp 0
 push local 1
-push local 3
-push local 6
-add
-pop pointer 1
-push that 0
+push local 2
+call Double.whole 1
 call Double.addInt 2
 pop temp 0
 push local 1
@@ -359,20 +795,20 @@ and
 push constant 0
 eq
 not
-if-goto IF_TRUE1
-goto IF_FALSE1
-label IF_TRUE1
+if-goto IF_TRUE13
+goto IF_FALSE13
+label IF_TRUE13
 push local 1
 push constant 1
 call Double.addInt 2
 pop temp 0
-label IF_FALSE1
+label IF_FALSE13
 push constant 0
 call Screen.setColor 1
 pop temp 0
-push local 4
+push local 6
 push constant 0
-push local 4
+push local 6
 push constant 255
 call Screen.drawLine 4
 pop temp 0
@@ -380,31 +816,31 @@ push constant 0
 not
 call Screen.setColor 1
 pop temp 0
-push local 4
+push local 6
 push constant 0
-push local 4
+push local 6
 push local 1
 call Double.whole 1
 call Screen.drawLine 4
 pop temp 0
-push local 5
-push constant 31415
-eq
-if-goto IF_TRUE2
-goto IF_FALSE2
-label IF_TRUE2
+push local 7
+push constant 31414
+gt
+if-goto IF_TRUE14
+goto IF_FALSE14
+label IF_TRUE14
 push constant 31416
 neg
-pop local 5
-label IF_FALSE2
-push local 5
-push constant 1
+pop local 7
+label IF_FALSE14
+push local 7
+push local 9
 add
-pop local 5
-push local 4
-push constant 1
+pop local 7
+push local 6
+push local 9
 add
-pop local 4
+pop local 6
 goto WHILE_EXP1
 label WHILE_END1
 goto WHILE_EXP0

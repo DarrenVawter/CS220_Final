@@ -102,11 +102,67 @@ class Double{
 
     }
 
-    //TODO implement mult
     //multiply this double by an int
     method void multInt(int a){
 
+        var int i;
+        var int div;
+        var int product;
+
+        let product = 0;
+        let div = 1;
+
+        let i = 0;
+
+        while(i<14){
+
+            let div = div * 2;
+            if(~(decimal&bitVal[i]=0)){
+                let product = product + (a/div);
+            }
+
+            let i = i + 1;
+        }
+
+        let product = product + (a*whole);
+
+        let whole = product;
+        let decimal = 0;
+
         return;
+
+/*
+        var int i;
+        var Double product;
+        var bool neg;
+
+        let product = Double.new();
+
+        if(a<0){
+            let neg = true;
+            let a = (~a)+1;//2's compliment
+        }else{
+            let neg = false;
+        }
+
+        let i = 0;
+        while(i<a){
+
+            do product.addDouble(this);
+
+            let i = i + 1;
+
+        }
+
+        let whole = product.whole();
+        let decimal = product.decimal();
+
+        if(neg){
+            let whole = (~whole)+1;//2's compliment
+        }
+
+        return;
+*/
 
     }
 
@@ -360,99 +416,8 @@ class Double{
     //TODO implement mult
     //multiply this double by another
 
+    //TODO implement divide
     //divide this double by another double
-    /*
-    method void divideDouble(Double divisor){
-
-        var int activeDividend;
-        var int quotient;
-        var int i;
-        var boolean negative;
-
-        //dividing by 0...
-        if(divisor.whole()=0 & divisor.decimal()=0){
-
-            //just return max double value, I guess...
-            let whole = 32767;
-            let decimal = 32767;
-            return;
-
-        }
-
-        let activeDividend = 0;
-
-        //determine if the result should be negated
-        if(whole<0 | decimal<0){
-            let whole = ~whole + 1;//2's compliment
-            let negative = true;
-        }else{
-            let negative = false;
-        }
-        if(divisor.whole()<0 & divisor.decimal()<0){
-            do divisor.multInt(-1);
-            let negative = ~negative;
-        }
-
-        //calculate whole number portion of quotient while tracking remainder
-        let i = 14;
-        while(~(i<0)){//loop through each whole numbers place (in binary) and perform division
-
-            let activeDividend = activeDividend * 2;
-            if(~((whole&bitVal[i])=0)){
-                let activeDividend = activeDividend + 1;
-            }
-
-            if(~(activeDividend<divisor)){
-                let activeDividend = activeDividend - divisor;
-                let quotient = quotient + bitVal[i];
-            }
-
-
-            let i = i - 1;
-
-        }
-
-        //negate result if answer should be negative
-        if(negative){
-            let quotient = ~quotient + 1;//2's compliment
-        }
-
-        //assign quotient to whole and re-assign it to 0 for decimal use
-        let whole = quotient;
-        let quotient = 0;
-
-        //calculate decimal portion of quotient using the tracked remainder from above
-        let i = 0;
-        while(i<14){//loop through each decimals place (in binary) and perform division
-
-            let activeDividend = activeDividend * 2;
-            if(~((decimal&decVal[i])=0)){
-                let activeDividend = activeDividend + 1;
-            }
-
-
-            if(~(activeDividend<divisor)){
-                let activeDividend = activeDividend - divisor;
-                let quotient = quotient + bitVal[i];
-            }
-
-
-            let i = i + 1;
-
-        }
-
-        //negate result if answer should be negative
-        if(negative){
-            let quotient = ~quotient + 1;//2's compliment
-        }
-
-        //assign decimal portion -> done
-        let decimal = quotient;
-
-        return;
-
-    }
-    */
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~OUTPUT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     //toString, basically
