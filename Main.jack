@@ -1,0 +1,120 @@
+class Main{
+
+    function void main(){
+
+        //declare all vars
+        var Double PI;
+        var Double hD;
+        var Double index;
+        var int intIndex;
+        var int i;
+        var int x;
+        var Array sinVals;
+
+        //init other classes
+        do Double.init();
+
+        //init object(s)
+        let PI = Double.new();
+        do PI.addInt(333);
+        do PI.divideInt(106);
+
+        let hD = Double.new();
+
+        let index = Double.new();
+
+        let sinVals = Array.new(24);
+        let sinVals[0]  = 0;
+        let sinVals[1]  = 1951;
+        let sinVals[2]  = 3827;
+        let sinVals[3]  = 5556;
+        let sinVals[4]  = 7071;
+        let sinVals[5]  = 8315;
+        let sinVals[6]  = 9239;
+        let sinVals[7]  = 9808;
+        let sinVals[8]  = 10000;
+        let sinVals[9]  = 9808;
+        let sinVals[10] = 9239;
+        let sinVals[11] = 8315;
+        let sinVals[12] = 7071;
+        let sinVals[13] = 5556;
+        let sinVals[14] = 3827;
+        let sinVals[15] = 1951;
+        let sinVals[16] = 0;
+        let sinVals[17] = -1951;
+        let sinVals[18] = -3827;
+        let sinVals[19] = -5556;
+        let sinVals[20] = -7071;
+        let sinVals[21] = -8315;
+        let sinVals[22] = -9239;
+        let sinVals[23] = -9808;
+        let sinVals[24] = -10000;
+        let sinVals[25] = -9808;
+        let sinVals[26] = -9239;
+        let sinVals[27] = -8315;
+        let sinVals[28] = -7071;
+        let sinVals[29] = -5556;
+        let sinVals[30] = -3827;
+        let sinVals[31] = -1951;
+
+        //begin processing
+        while(true){
+
+            let i = 0;
+            while(i<512){
+
+                //calc sinVal index
+                do index.zero();
+                do index.addInt(x);
+                do index.divideInt(5);//freq mod
+                if( ~( (index.decimal()&1) = 0 ) ){
+                    do index.addInt(1);
+                }
+                let intIndex = (index.whole() & 31);
+
+                // hD=0;
+                do hD.zero();
+
+                // hD+=sinVal[index]
+                do hD.addInt(sinVals[intIndex]);
+
+                // hD/=80
+                do hD.divideInt(80);
+
+                // hD+=127
+                do hD.addInt(127);
+
+                // if(h_dec>=.5)
+                if( ~( (hD.decimal()&1) = 0 ) ){
+                    do hD.addInt(1);
+                }
+
+
+                //erase
+                do Screen.setColor(false);
+                do Screen.drawLine(i,0,i,255);
+                //draw
+                do Screen.setColor(true);
+                do Screen.drawLine(i,0,i,hD.whole());
+
+                //cap x
+                if(x = 31415){
+                    let x = -31416;
+                }
+                //x++
+                let x = x + 1;
+
+                //i++
+                let i = i + 1;
+            }
+
+        }
+
+        //dispose all objects
+        do hD.dispose();
+
+        return;
+
+    }
+
+}
