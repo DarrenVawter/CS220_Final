@@ -95,7 +95,7 @@ class Main{
         let sinVals[63] = -980;
 
         //init vars
-        let freq = 5;
+        let freq = 0;
         let density = 1;
         let keyWaiting = true;
 
@@ -195,8 +195,8 @@ class Main{
                 do Screen.drawLine(i,0,i,hD.whole());
 
                 //cap x
-                if(x > 31414){
-                    let x = -31416;
+                if(x = 32767){
+                    let x = -density;
                 }
                 //x++
                 let x = x + density;

@@ -824,12 +824,12 @@ call Double.whole 1
 call Screen.drawLine 4
 pop temp 0
 push local 7
-push constant 31414
-gt
+push constant 32767
+eq
 if-goto IF_TRUE14
 goto IF_FALSE14
 label IF_TRUE14
-push constant 31416
+push local 9
 neg
 pop local 7
 label IF_FALSE14
