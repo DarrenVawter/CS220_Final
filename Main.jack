@@ -1,103 +1,120 @@
 class Main{
 
+/*
+ *
+ *  This program
+ *
+**/
     function void main(){
 
         //declare all vars
-        var Double PI;
-        var Double hD;
-        var Double index;
-        var Array sinVals;
-        var int uIndex;
-        var int lIndex;
-        var int i;
-        var int x;
-        var int freq;
-        var int density;
-        var boolean keyWaiting;
+        var Double PI;          //approximated value of PI (333/106) used for demo of Double class only
+        var Double hD;          //height of the sin curve at the current index/x value
+        var Double index;       //true 'index' of current sin value
+        var Array sinVals;      //array of approximated sin values*10000
+        var int uIndex;         //upper index of sin value array of current actual sin value
+        var int lIndex;         //lower index of sin value array of current actual sin value
+        var int i;              //counter that binds current draw position between 0 and 511
+        var int x;              //counter that counts with i but only resets when @ int max (used for calculating height of sin curve)
+        var int freq;           //relative frequency of sin curve
+        var int density;        //spacing between lines of sin curve (used to draw multiple waves at once)
+        var boolean keyWaiting; //used to ensure only 1 key press is detected at a time
 
         //init other classes
         do Double.init();
 
         //init object(s)
+            //approximation for pi is used for demonstration of the Double class -> not in calculating any sin values
         let PI = Double.new();
         do PI.addInt(333);
         do PI.divideInt(106);
 
+            //double used to store height (once it has been calculated)
         let hD = Double.new();
 
+            //'index' of the sin value array to access
+                //whole number of this double is the lower index
+                //whole number+1 is the upper index
+                //decimal is the % weight to give the upper index when linearly interpolating between the two
         let index = Double.new();
 
+            //list of approximated sin values*10000
+                //these vals are decimal shifted left 4 places (*10000) to increase precision
+                    //shifting more than 4 places would result in integer overflow
         let sinVals = Array.new(64);
         let sinVals[0]  = 0;
-        let sinVals[2]  = 1951;
-        let sinVals[4]  = 3827;
-        let sinVals[6]  = 5556;
-        let sinVals[8]  = 7071;
-        let sinVals[10]  = 8315;
-        let sinVals[12]  = 9239;
-        let sinVals[14]  = 9808;
-        let sinVals[16]  = 10000;
-        let sinVals[18]  = 9808;
-        let sinVals[20] = 9239;
-        let sinVals[22] = 8315;
-        let sinVals[24] = 7071;
-        let sinVals[26] = 5556;
-        let sinVals[28] = 3827;
-        let sinVals[30] = 1951;
-        let sinVals[32] = 0;
-        let sinVals[34] = -1951;
-        let sinVals[36] = -3827;
-        let sinVals[38] = -5556;
-        let sinVals[40] = -7071;
-        let sinVals[42] = -8315;
-        let sinVals[44] = -9239;
-        let sinVals[46] = -9808;
-        let sinVals[48] = -10000;
-        let sinVals[50] = -9808;
-        let sinVals[52] = -9239;
-        let sinVals[54] = -8315;
-        let sinVals[56] = -7071;
-        let sinVals[58] = -5556;
-        let sinVals[60] = -3827;
-        let sinVals[62] = -1951;
-
         let sinVals[1]  = 980;
+        let sinVals[2]  = 1951;
         let sinVals[3]  = 2903;
+        let sinVals[4]  = 3827;
         let sinVals[5]  = 4714;
+        let sinVals[6]  = 5556;
         let sinVals[7]  = 6344;
+        let sinVals[8]  = 7071;
         let sinVals[9]  = 7730;
+        let sinVals[10]  = 8315;
         let sinVals[11]  = 8819;
+        let sinVals[12]  = 9239;
         let sinVals[13]  = 9569;
+        let sinVals[14]  = 9808;
         let sinVals[15]  = 9952;
+        let sinVals[16]  = 10000;
         let sinVals[17]  = 9952;
+        let sinVals[18]  = 9808;
         let sinVals[19]  = 9569;
+        let sinVals[20] = 9239;
         let sinVals[21] = 8819;
+        let sinVals[22] = 8315;
         let sinVals[23] = 7730;
+        let sinVals[24] = 7071;
         let sinVals[25] = 6344;
+        let sinVals[26] = 5556;
         let sinVals[27] = 4714;
+        let sinVals[28] = 3827;
         let sinVals[29] = 2903;
+        let sinVals[30] = 1951;
         let sinVals[31] = 980;
+        let sinVals[32] = 0;
         let sinVals[33] = -980;
+        let sinVals[34] = -1951;
         let sinVals[35] = -2903;
+        let sinVals[36] = -3827;
         let sinVals[37] = -4714;
+        let sinVals[38] = -5556;
         let sinVals[39] = -6344;
+        let sinVals[40] = -7071;
         let sinVals[41] = -7730;
+        let sinVals[42] = -8315;
         let sinVals[43] = - 8819;
+        let sinVals[44] = -9239;
         let sinVals[45] = - 9569;
+        let sinVals[46] = -9808;
         let sinVals[47] = - 9952;
+        let sinVals[48] = -10000;
         let sinVals[49] = - 9952;
+        let sinVals[50] = -9808;
         let sinVals[51] = - 9569;
+        let sinVals[52] = -9239;
         let sinVals[53] = -8819;
+        let sinVals[54] = -8315;
         let sinVals[55] = -7730;
+        let sinVals[56] = -7071;
         let sinVals[57] = -6344;
+        let sinVals[58] = -5556;
         let sinVals[59] = -4714;
+        let sinVals[60] = -3827;
         let sinVals[61] = -2903;
+        let sinVals[62] = -1951;
         let sinVals[63] = -980;
 
         //init vars
-        let freq = 0;
         let density = 1;
         let keyWaiting = true;
+
+//        do Output.printString(PI.str());
+
+        //read in freq
+        let freq = Keyboard.readInt("Press a number to select an initial frequency...");
 
         //begin processing
         while(true){
@@ -195,13 +212,13 @@ class Main{
                 do Screen.drawLine(i,0,i,hD.whole());
 
                 //cap x
-                if(x = 32767){
+                if(x > 32766 | x<0){
                     let x = -density;
                 }
-                //x++
+                //x+=density
                 let x = x + density;
 
-                //i++
+                //i+=density
                 let i = i + density;
             }
 
