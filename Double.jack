@@ -1,3 +1,9 @@
+/*
+ *
+ *  This class stores two integers together to create a pseudo-double. The first int is simply the whole number portion
+ *  of the double. The second int is the binary decimal portion of this double. Since this is not a floating point
+ *  representation, the 'double' only contains 4 decimal places, only 2 of which are significant digits.
+ */
 class Double{
 
     static Array bitVal;
@@ -6,6 +12,9 @@ class Double{
     field int whole;
     field int decimal;
 
+    /*
+     *Initialize array values for reference
+     */
     function void init(){
 
         //0 --> 0
@@ -76,7 +85,7 @@ class Double{
 
     }
 
-    //set to 0
+    //set to 0.0
     method void zero(){
 
         let whole = 0;

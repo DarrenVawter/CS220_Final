@@ -111,13 +111,34 @@ class Main{
         let density = 1;
         let keyWaiting = true;
 
-//        do Output.printString(PI.str());
+        //DEMONSTRATION OF PSEUDO-DOUBLE CLASS
+        do Output.printString("Pi (as a pseudo-double): ");
+        do Output.printString(PI.str());
+        do Output.println();
+        do Output.println();
 
+        //prompt instructions
+        do Output.printString("Welcome to the sine wave generator.");
+        do Output.println();
+        do Output.println();
+        do Output.printString("Controls:");
+        do Output.println();
+        do Output.printString("Increase Wavelength/Decrease Frequency-->Down arrow key");
+        do Output.println();
+        do Output.printString("Decrease Wavelength/Increase Frequency-->Up arrow key");
+        do Output.println();
+        do Output.printString("Increase Wave Density-->Left arrow key");
+        do Output.println();
+        do Output.printString("Decrease Wave Density-->Right arrow key");
+        do Output.println();
+        do Output.printString("Quit->esc");
+        do Output.println();
+        do Output.println();
         //read in freq
         let freq = Keyboard.readInt("Press a number to select an initial frequency...");
 
         //begin processing
-        while(true){
+        while(~(Keyboard.keyPressed()=140)){
 
             let i = 0;
             while(i<512){
@@ -199,6 +220,7 @@ class Main{
                 do hD.addInt(127);
 
                 // if(h_dec>=.5)
+                    //(choosing closest int at this point, as we cannot shade part of a pixel)
                 if( ~( (hD.decimal()&1) = 0 ) ){
                     do hD.addInt(1);
                 }
@@ -225,7 +247,10 @@ class Main{
         }
 
         //dispose all objects
+        do PI.dispose();
         do hD.dispose();
+        do index.dispose();
+        do sinVals.dispose();
 
         return;
 
